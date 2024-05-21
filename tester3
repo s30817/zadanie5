@@ -1,0 +1,22 @@
+import java.util.ArrayList;
+
+public class Tester extends Employee{
+    public ArrayList<String> Number_Of_Test = new ArrayList<>();
+    public Tester(String adress, String fname, String lname, String pessel, String email, int year) {
+        super(adress, fname, lname, pessel, email, year);
+    }
+
+    public void addTestType(String s)
+    {
+        this.Number_Of_Test.add(s);
+    }
+
+    @Override
+    public int calculateSalary()
+    {
+        int Sallary =0;
+        Sallary = super.calculateSalary()+(this.Number_Of_Test.size()*300);
+        System.out.println(Sallary);
+        return Sallary;
+    }
+}
