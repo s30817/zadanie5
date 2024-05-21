@@ -1,0 +1,23 @@
+import java.time.Year;
+
+public class Employee {
+    public String fname, lname, pessel, email,adress;
+    public int year;
+    public int sallary;
+    public Employee(String adress,String fname, String lname, String pessel, String email,int year)
+    {
+        this.fname = fname;
+        this.lname = lname;
+        this.pessel = pessel;
+        this.email = email;
+        this.year = year;
+        this.adress = adress;
+    }
+    public int  calculateSalary()
+    {
+        int sallary =0;
+        int timeincompany = Year.now().getValue()-this.year;
+        sallary = 3000 + (1000*timeincompany);
+        return sallary ;
+    }
+}
