@@ -1,0 +1,23 @@
+import java.util.ArrayList;
+
+public class Developer extends Employee{
+
+    ArrayList<String> technology = new ArrayList<>();
+    public int Sum ;
+    public Developer(String adress, String fname, String lname, String pessel, String email, int year) {
+        super(adress, fname, lname, pessel, email, year);
+    }
+    public void addTechnology(Technology t)
+    {
+        this.technology.add(t.name);
+        this.Sum += t.bonus;
+    }
+    @Override
+    public int calculateSalary()
+    {
+        int Sallary =0;
+      Sallary = super.calculateSalary()+this.Sum;
+        System.out.println(Sallary);
+      return Sallary;
+    }
+}
