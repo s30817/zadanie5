@@ -1,0 +1,33 @@
+import java.util.ArrayList;
+
+public class Manager extends Employee{
+    ArrayList<Boolean> Goals = new ArrayList<>();
+    ArrayList<Integer> bonus = new ArrayList<>();
+    public Manager(String adress, String fname, String lname, String pessel, String email, int year) {
+        super(adress, fname, lname, pessel, email, year);
+    }
+    public void addGoals(Goal g)
+        {
+        this.Goals.add(g.made);
+        this.bonus.add(g.bonus);
+    }
+    public int calculateSalary()
+    {
+        int Sallary =0;
+        for (int i =0;i<this.Goals.size();i++)
+        {
+
+            if(Goals.get(i))
+            {
+
+                Sallary +=this.bonus.get(i);
+
+            }
+
+
+        }
+        Sallary += super.calculateSalary();
+        System.out.println(Sallary);
+        return Sallary;
+    }
+}
